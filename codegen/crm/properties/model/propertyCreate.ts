@@ -58,6 +58,8 @@ export class PropertyCreate {
     * Whether or not the property can be used in a HubSpot form.
     */
     'formField'?: boolean;
+    'referencedObjectType': string;
+    'externalOptions': string;
 
     static discriminator: string | undefined = undefined;
 
@@ -116,7 +118,18 @@ export class PropertyCreate {
             "name": "formField",
             "baseName": "formField",
             "type": "boolean"
-        }    ];
+        },
+        {
+            "name": "referencedObjectType",
+            "baseName": "referencedObjectType",
+            "type": "string"
+        },
+        {
+            "name": "externalOptions",
+            "baseName": "externalOptions",
+            "type": "boolean"
+        }
+    ];
 
     static getAttributeTypeMap() {
         return PropertyCreate.attributeTypeMap;
